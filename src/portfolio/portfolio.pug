@@ -15,6 +15,7 @@ block body
 			#navbarResponsive.collapse.navbar-collapse
 				ul.navbar-nav.ml-auto.top-nav-links
 					+insertLinkMenuItem("ARTS","#arts")
+					+insertLinkMenuItem("NEWS","#news")
 					+insertLinkMenuItem("PROJECTS","#projects")
 					+insertLinkMenuItem("WORKS","#works")
 					+insertLinkMenuItem("ABOUT","#about")
@@ -34,7 +35,7 @@ block body
 						.col-lg-12.text-center
 							// +addBrand("fa-unity",3)
 							+addIcon("fa-vr-cardboard",3)
-							h2.title Section title
+							h2.title News / Latest
 			.section-body
 				.news-items
 					a.news-item(data-toggle='modal', href='#portfolioModal1')
@@ -193,75 +194,74 @@ block body
 					.portfolio-caption
 						.portfolio-caption-heading Lines
 						.portfolio-caption-subheading.text-muted Branding
-
-		section#projects
-			.container-fluid.p-0
-				.row.no-gutters
-					.col-lg-6.full-cover-bg-img(style="background-image:url('//placehold.it/900x600')")
-					.col-lg-6.my-auto.showcase-text 
-						h2 Another showcase title
-						p Lorem Ipsum
-				.row.no-gutters
-					.col-lg-6.order-md-2.order-lg-1.my-auto.showcase-text 
-						h2 Another showcase title
-						p Lorem Ipsum       
-					.col-lg-6.order-md-1.order-lg-2.full-cover-bg-img(style="background-image:url('//placehold.it/900x600')")
-
-		section#works
-			.container-fluid.p-0
-				.row.no-gutters
-					.col-lg-6.col-md-6.col-sm-12
-						.box
-							h3 Box title
-							img(src="//placehold.it/355x200")
-					.col-lg-6.col-md-6.col-sm-12
-						.box
-							.box__body
-								img.center-block(src="//placehold.it/355x200")
-							.box--overlay
-							.box__body--caption
+		//-
+			section#projects
+				.container-fluid.p-0
+					.row.no-gutters
+						.col-lg-6.full-cover-bg-img(style="background-image:url('//placehold.it/900x600')")
+						.col-lg-6.my-auto.showcase-text 
+							h2 Another showcase title
+							p Lorem Ipsum
+					.row.no-gutters
+						.col-lg-6.order-md-2.order-lg-1.my-auto.showcase-text 
+							h2 Another showcase title
+							p Lorem Ipsum       
+						.col-lg-6.order-md-1.order-lg-2.full-cover-bg-img(style="background-image:url('//placehold.it/900x600')")
+			section#works
+				.container-fluid.p-0
+					.row.no-gutters
+						.col-lg-6.col-md-6.col-sm-12
+							.box
 								h3 Box title
+								img(src="//placehold.it/355x200")
+						.col-lg-6.col-md-6.col-sm-12
+							.box
+								.box__body
+									img.center-block(src="//placehold.it/355x200")
+								.box--overlay
+								.box__body--caption
+									h3 Box title
+									p this is text content
+						.col-lg-6.col-md-6.col-sm-12
+							.box
+								h3 Box title
+								img.center-block(src="//placehold.it/355x200")
+						.col-lg-6.col-md-6.col-sm-12
+							.box
+								h3 Box title
+								img.center-block(src="//placehold.it/355x200")  
+			section#about
+				.container
+					.row
+						.col-lg-4.col-md-6.col-sm-12.my-3
+							.box
+								h3 Box title
+								img.center-block(src="//placehold.it/355x200")
+						.col-lg-4.col-md-6.col-sm-12.my-3
+							.box
+								h3 Box title
+								img.center-block(src="//placehold.it/355x200")
 								p this is text content
-					.col-lg-6.col-md-6.col-sm-12
-						.box
-							h3 Box title
-							img.center-block(src="//placehold.it/355x200")
-					.col-lg-6.col-md-6.col-sm-12
-						.box
-							h3 Box title
-							img.center-block(src="//placehold.it/355x200")  
-		section#about
-			.container
-				.row
-					.col-lg-4.col-md-6.col-sm-12.my-3
-						.box
-							h3 Box title
-							img.center-block(src="//placehold.it/355x200")
-					.col-lg-4.col-md-6.col-sm-12.my-3
-						.box
-							h3 Box title
-							img.center-block(src="//placehold.it/355x200")
-							p this is text content
-					.col-lg-4.col-md-6.col-sm-12.my-3
-						.box
-							h3 Box title
-							img.center-block(src="//placehold.it/355x200") 
-		section#resume
-			.container-fluid
-				.row.fb-wrap
-					.col-lg-4.col-md-6.col-sm-12
-						.box
-							h3 xBox title
-							img.center-block(src="//placehold.it/355x200")
-					.col-lg-4.col-md-6.col-sm-12
-						.box
-							h3 Box title
-							img.center-block(src="//placehold.it/355x200")
-							p this is text content
-					.col-lg-4.col-md-6.col-sm-12
-						.box
-							h3 Box title
-							img.center-block(src="//placehold.it/355x200")
+						.col-lg-4.col-md-6.col-sm-12.my-3
+							.box
+								h3 Box title
+								img.center-block(src="//placehold.it/355x200") 
+			section#resume
+				.container-fluid
+					.row.fb-wrap
+						.col-lg-4.col-md-6.col-sm-12
+							.box
+								h3 xBox title
+								img.center-block(src="//placehold.it/355x200")
+						.col-lg-4.col-md-6.col-sm-12
+							.box
+								h3 Box title
+								img.center-block(src="//placehold.it/355x200")
+								p this is text content
+						.col-lg-4.col-md-6.col-sm-12
+							.box
+								h3 Box title
+								img.center-block(src="//placehold.it/355x200")
 		//-
 			// multi-sections : /w/full/1/c/5/361173.jpg
 			section.page-section.bg-image-full.bg-color-after-content(style="background-image: url('https://wallpaperset.com/w/full/c/2/8/361167.jpg')")
@@ -299,7 +299,7 @@ block body
 					a.btn.btn-home.invert-btn(href='#') View Portfolio
 
 		//- Footer
-		footer.footer
+		footer#contact.footer
 			.container
 				.row.align-items-center
 					.col-lg-4.text-lg-left
@@ -316,7 +316,7 @@ block body
 						a(href='#!') Terms of Use
 
 		#portfolioModal1.portfolio-modal.modal.fade(tabindex='-1' role='dialog' aria-hidden='true')
-			.modal-dialog
+			.modal-dialog.modal-dialog-centered
 				.modal-content
 					//.close-modal(data-dismiss='modal')
 					//	i.fa.fa-2.circle
