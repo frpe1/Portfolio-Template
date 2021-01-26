@@ -23,9 +23,9 @@ block body
 	.content-wrap
 		header.master-head.text-center
 			.header-content.container.d-flex.align-items-center.flex-column
-				h1.main-title Your Website
-				h4.sub-title Writing the selling pitch here
-				strong Something else
+				h4.sub-title Welcome to my portfolio!
+				h1.main-title Main title here
+				a.btn.btn-primary.btn-x1.text-uppercase.js-scroll-trigger(href="#projects") Explore!
 		section#arts
 		section#news.section-page
 			.section-header
@@ -318,25 +318,25 @@ block body
 		#portfolioModal1.portfolio-modal.modal.fade(tabindex='-1' role='dialog' aria-hidden='true')
 			.modal-dialog
 				.modal-content
-					.close-modal(data-dismiss='modal')
-						i.fa.fa-2.circle
+					//.close-modal(data-dismiss='modal')
+					//	i.fa.fa-2.circle
 					.container
 						.row.justify-content-center
-							.col-lg-8
-							.modal-body
-								// Project Details Go Here
-								h2.text-uppercase Project Name
-								p.item-intro.text-muted Lorem ipsum dolor sit amet consectetur.
-								img.img-fluid.d-block.mx-auto(src='//placehold.it/150x180' alt='')
-								p
-								| Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!
-								ul.list-inline
-									li Date: January 2020
-									li Client: Threads
-									li Category: Illustration
-								button.btn.btn-primary(data-dismiss='modal' type='button')
-									i.fas.fa-times.mr-1
-									|  Close Project
+							.col-lg-12
+								.modal-body
+									// Project Details Go Here
+									h2.modal--title.text-uppercase Project Name
+									p.item-intro.text-muted Lorem ipsum dolor sit amet consectetur.
+									img.img-fluid.d-block.mx-auto(src='//placehold.it/300x300' alt='')
+									p
+									| Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!
+									ul.list-inline
+										li Date: January 2020
+										li Client: Threads
+										li Category: Illustration
+									button.btn.btn-primary(data-dismiss='modal' type='button')
+										i.fas.fa-times.mr-1
+										|  Close Project
 
 		a.js-scroll-trigger.back-to-top.on(href='#page-top', style="display: inline")
 			span.edgt-icon-stack

@@ -24,6 +24,8 @@ $section-bg-color = #050509
 $project-items-bg-color = #222
 $headings-font-family = "Open Sans","Helvetica Neue",Helvetica,Arial,"sans-serif"
 $master-head-bg-image = "//placehold.it/1920x1080" // "https://wallpaperaccess.com/full/403137.jpg"
+$portfolio-modal-bg-color = #141417 //  #152631
+
 // ---- Extra 
 .no-gutters
   margin-right 0
@@ -250,8 +252,8 @@ a
 // ---- header (master-head)
 .master-head
   position relative
-  padding-top 4rem
-  padding-bottom 4rem
+  padding-top 17rem
+  padding-bottom 12.5rem
   background-image linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000000 100%), url($master-head-bg-image)
   background-size cover
   background-position 50% 50%
@@ -495,7 +497,17 @@ a
         letter-spacing 0.015px
       &__footer
         font-size: 85%;
-        
+
+// ---- portfolio modals
+
+.portfolio-modal
+  .modal
+    &-content
+      background $portfolio-modal-bg-color
+    &--title
+      color white
+
+
 // ---- Icons
 .btn-social
   height 2.5rem
