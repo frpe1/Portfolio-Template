@@ -75,3 +75,10 @@ code all your stylesheet, but doing that with help of coding stylus and not css 
 ## Screenshots
 
 ![Image of Portfolio Template](http://utopiafx.se/uA84oq09463812742cru73/Screenshot_2021-01-26%20test.png)
+
+
+## License
+
+Attribution CC BY
+
+https://creativecommons.org/licenses/by/4.0/
