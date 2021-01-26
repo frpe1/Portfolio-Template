@@ -1,0 +1,655 @@
+//@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap');
+//@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800&display=swap');
+//@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,500,600,700&display=swap')
+
+//@import '../mixins/mixin.styl'
+
+$basic-fonts = "Open Sans","Helvetica Neue",Helvetica,Arial,"sans-serif"
+$basic-line-height = 1.8em
+$bg-primary-color = #2980b9
+$bg-secondary-color = #141417 // #f39c12
+$bg-accent-color = #141417
+$basic-bg-pattern = "https://www.transparenttextures.com/patterns/cross-stripes.png" // different pattern: "http://auventsbilodeau.com/images/backgrounds/dark-stripe.png"
+$basic-bg-color =  #141417 // different valour: #171717 // #080808 //
+$basic-text-color = #bbb
+$basic-title-color = #f1f1f1
+$basic-link-color = #13aff0
+$basic-link-hover-color = #0b7cac
+$breadtext-color = #bbb
+$dark-text-color = #333
+$hamburger-icon-color = #13aff0
+$content-wrap-bg-pattern = none //"http://auventsbilodeau.com/images/backgrounds/dark-stripe.png"
+$content-wrap-bg-color = #14141c
+$section-bg-color = #050509
+$project-items-bg-color = #222
+$headings-font-family = "Open Sans","Helvetica Neue",Helvetica,Arial,"sans-serif"
+$master-head-bg-image = "//placehold.it/1920x1080" // "https://wallpaperaccess.com/full/403137.jpg"
+// ---- Extra 
+.no-gutters
+  margin-right 0
+  margin-left 0
+  
+.bg-image-full
+  background no-repeat center center scroll
+  -webkit-background-size cover
+  -moz-background-size cover
+  background-size cover
+  -o-background-size cover
+
+.full-cover-bg-img
+  min-height 22rem
+  -webkit-background-size cover
+  -moz-background-size cover
+  background-size cover
+  -o-background-size cover
+
+.image-full-width
+  max-width 100%
+  height auto
+
+.image-full-cover
+  max-width 100%
+  object-fit cover
+  min-width 100%
+
+.image-skew
+  position relative
+  display block
+  &:focus, :hover
+    color inherit
+    text-decoration none
+    outline 0  
+  .img
+    position relative
+    display block
+    overflow hidden
+    background #160962
+    -webkit-transform skew(-7deg)
+    -ms-transform skew(-7deg)
+    transform skew(-7deg)
+    -webkit-transform-origin 50% 50%
+    -ms-transform-origin 50% 50%
+    transform-origin 50% 50%
+    -webkit-backface-visibility hidden
+    img
+      width 100%
+      transform skew(7deg) scale(1.098)
+      transition .3s opacity ease
+      opacity 1
+  .over-info
+    position absolute
+    top 0
+    left 0
+    right 0
+    width 90%
+    height 100%
+    margin-left 5%
+    text-align center
+
+.bg-color-after-content
+  position relative
+  &:after
+    content ''
+    position absolute
+    background-color rgba(0,0,0,.7)
+    top 0
+    bottom 0
+    left 0
+    right 0
+
+.btn.invert-btn
+  font-size: 0.775em
+  font-weight: 400
+  background: transparent
+  border: 1px solid #fff
+  letter-spacing: 0.15em
+  text-transform: uppercase
+  margin-bottom: 0.5em
+  padding: 1em 1.2em
+  box-shadow: inset 0 0 0 0 #404247
+  -webkit-transition: all ease-in-out 0.2s
+  transition: all ease-in-out 0.2s
+  font-weight: 400
+  border-radius: 0
+  color: #fff
+  &:hover
+    background-color: $bg-primary-color // #53565c
+    border-color: $bg-primary-color // #53565c
+    box-shadow: inset 0 -100px 0 0 $bg-primary-color // #404247
+    color: #fff
+
+// colors  
+.bg-primary-color
+  background $bg-primary-color
+
+.bg-secondary-color
+  background $bg-secondary-color
+
+.bg-accent-color
+  background $bg-accent-color
+  
+// Flex
+.fb-wrap
+  display flex
+  flex-wrap wrap
+  [class*='col-']
+    flex-grow 1  
+
+.list-none-style
+  list-style-type none    
+
+.back-to-top
+  position fixed
+  right 15px
+  bottom 15px
+  display none
+  width 50px
+  height 50px
+  text-align center
+  color #fff
+  background rgba(52,58,64,.5)
+  line-height 45px
+  z-index 999
+
+// overflow hidden  
+.o-h
+  overflow hidden
+// position relative
+.p-r
+  position relative
+.mh-100
+  max-height 350px
+  border 1px dashed red
+.h-100
+  height 100%
+  border 1px dashed blue
+
+.main-title
+  font-weight bold
+  letter-spacing 0.1em
+  text-transform uppercase
+  color #f1f1f1
+
+.sub-title
+  color #ccc
+  font-size 1.3em
+  letter-spacing 0.1em
+
+// ---- Basic
+*, :after, :before
+  box-sizing border-box
+
+body
+  font-family $basic-fonts
+  color $basic-text-color
+  // background-image: url("data:image/png;base64,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")
+  background-image url($basic-bg-pattern)
+  background-color $basic-bg-color
+  line-height $basic-line-height
+  width 100%
+  height 100%
+ 
+p
+  color $breadtext-color
+
+strong
+  color $breadtext-color
+a
+  color $basic-link-color
+  text-decoration none
+  transition all .2s cubic-bezier(.55,.085,.68,.53)
+  &:hover,:focus
+    color $basic-link-hover-color
+    text-decoration none
+
+.title
+  color $basic-title-color
+  
+// ---- Game wrapper 
+.content-wrap
+  //background-image url($content-wrap-bg-pattern)
+  background-color $content-wrap-bg-color
+  height 100%
+  //width 100%
+  max-width 1400px
+  margin 0 auto
+  overflow hidden
+
+// ---- top-menu navigations
+.navbar
+  //border 1px solid yellow
+  &:after
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,.8) 50%, transparent 100%)
+    z-index -1
+    //border 1px solid white
+  .top-nav-links
+    font-size 0.8em
+    li:hover
+      transition all .1s cubic-bezier(.55,.085,.68,.53)
+      //background rgba(12,12,12,.5)
+    .link-item
+      margin-right 10px
+      padding-top 20px
+      color #fff
+      letter-spacing 0.1em
+      //border 1px solid red
+      width 100%
+      text-align center
+      &:hover,:focus
+        color #aaa
+        
+  .hamburger-icon-color
+    color $hamburger-icon-color
+  
+// ---- header (master-head)
+.master-head
+  position relative
+  padding-top 4rem
+  padding-bottom 4rem
+  background-image linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000000 100%), url($master-head-bg-image)
+  background-size cover
+  background-position 50% 50%
+
+
+// ---- Sections
+
+.section-page
+  padding 8rem 0
+  
+.section-header
+  .title
+      font-size 30pt
+      padding-top 10px
+      padding-bottom 10px
+      font-weight bold
+      color #ccc
+  
+// ---- showcase section
+.showcase-text
+  padding 7rem !important
+      
+// ---- Items
+
+// -------- Project-items
+.project-items
+  background $project-items-bg-color
+  border-radius 10px
+  padding 30px
+  .categories
+    color $basic-link-color
+    text-decoration none
+  .title
+    color #fff
+
+// -------- box-items
+.box
+  border 3px dashed #44c
+  height 100% // makes it same height
+  width 100%
+  overflow hidden
+  position relative
+  &--overlay
+    position absolute
+    height 100px
+    left 0
+    right 0
+    bottom 0
+    background-color rgba(0,0,0,.3)
+  &__header
+  &__body
+    overflow hidden
+    border 3px solid red
+    width 100%
+    height 100%
+    position relative
+    img
+      position absolute
+      width 100%
+      height auto
+      left 50%
+      top 50%
+      min-height 355px
+      min-width 200px
+      transform translate(-50%,-50%)
+    &--caption
+      position absolute
+      height 100px
+      left 0
+      right 0
+      bottom 0
+      padding 1rem
+  &__footer
+    text-align center
+  
+// -------- card-items
+
+// -------- portfolio-items
+
+// -------- news-items
+.news-items
+  display flex
+  flex-direction column
+  .news-item
+    position relative
+    min-height 180px
+    max-height 250px
+    overflow hidden
+    display flex
+    &__header
+      position relative
+      //border 7px solid green
+      min-width 100%
+      max-width 100%
+      max-height 100%
+      min-height 100%
+      &--image
+        position absolute
+        top 50%
+        left 50%
+        transform translate(-50%,-50%)
+        min-height 330px
+        min-width 805px
+        height auto
+        width 100%
+        //object-fit cover
+        /*
+        background-size: cover;
+        max-width 100%
+        min-width 100%
+        width 805px
+        height 330px
+        max-height 100%
+        min-height 100%        
+        position absolute
+        top 0
+        right 0
+        left 0
+        bottom 0
+        */
+        //border 4px solid blue
+        // background-color rgba(0,0,0,.5)
+
+    &__caption
+      position absolute
+      top 0
+      right 0
+      left 0
+      bottom 0
+      padding-left 2rem
+      padding-right 2rem
+      display flex
+      flex-direction column
+      justify-content flex-end
+      //border 2px solid red
+      //background rgba(0,0,0,0.7)
+      background-image linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, rgba(0, 0, 0, 0.8) 100%)
+      //background-size cover
+      //background-image linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000000 100%)
+       
+      &--title
+        //border 1px solid green
+        color white
+      &--text
+        //border 1px solid black
+        font-size 90%
+      
+        
+
+#assets
+  border 1px solid red
+  .b1
+    border 1px solid green
+    .b2
+      border 1px dashed blue
+// -------- skewZoom-items
+.skewZoom-items
+  display flex
+  .skewZoom-item
+    width 200px
+    height 200px
+    overflow hidden
+    transform skew(-7deg)
+    margin-left 3px
+    &__img
+      transition all .2s
+      transform scale(1.2) skew(7deg)
+      max-width 100%
+      &:hover
+        -ms-transform scale(1.5) skew(7deg) // IE 9
+        -webkit-transform scale(1.5) skew(7deg) // Safari 3-8
+        transform scale(1.5) skew(7deg)
+
+// -------- archive-items
+
+.archive-items
+  display -ms-flexbox
+  display flex
+  -ms-flex-wrap wrap
+  flex-wrap wrap
+  -ms-flex-pack justify
+  justify-content space-between
+  .archive-item
+    width 32%
+    display flex
+    flex-direction column
+    -ms-flex-preferred-size calc(32% - 15px)
+    flex-basis calc(32% - 15px)
+    -ms-flex-line-pack justify
+    align-content space-between
+    background #222
+    letter-spacing .015em
+    .archive-thumbnail
+      position relative
+      overflow hidden
+      display block
+      &:before
+        content ""
+        display block
+        padding-bottom 56.25%
+      img
+        position absolute
+        top 0
+        left 0
+        width 100%
+        height 100%
+        object-fit cover
+      .overlay
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        background: rgba(0,0,0,.4);
+        transition: opacity .25s ease-in-out;          
+    .archive-panel
+      padding 10px 15px 15px
+      display -ms-flexbox
+      display flex
+      -ms-flex-direction column
+      flex-direction column
+      -ms-flex-positive 1
+      flex-grow 1
+      ul
+        padding 0
+      ul > li
+        display: inline-block;
+        font-size: 85%;
+        padding: 0;
+        margin-right: 5px;
+
+      h4
+        font-size 18px
+        letter-spacing 0.015px
+      &__footer
+        font-size: 85%;
+        
+// ---- Icons
+.btn-social
+  height 2.5rem
+  width 2.5rem
+  display inline-flex
+  align-items center
+  justify-content center
+  padding 0
+  border-radius 100%
+
+// ---- footer
+.footer
+  padding-top 2rem
+  padding-bottom 4rem
+  background #09090c
+  text-align center
+  font-size 0.9em
+  font-family $headings-font-family
+  
+@media (max-width 992px)
+  .navbar
+    background #000 !important
+    .top-nav-links
+      .link-item
+        text-align left
+
+@media (min-width: 992px)
+  .navbar
+    transition all .2s cubic-bezier(.55,.085,.68,.53)
+    &.navbar-effect
+      padding-top 0px
+      background #000
+      
+// -----------------------------------
+
+
+
+section
+  &.work-tiles
+    ul
+      padding 25px 0
+    .work-tiles-items
+      padding 0
+      background-color #c81486
+      cursor pointer
+      img
+        width 100%
+      span
+        padding 34px
+        color #fff
+        position absolute
+        bottom -4px
+        left 0
+        font-size 40px
+        line-height 40px
+        text-align left
+        text-transform uppercase
+      :hover 
+        .text-overlay
+          opacity 1
+    .text-overlay
+      background-color rgba(200,20,134,1)
+      position absolute
+      bottom 0
+      left 0
+      color #fff
+      opacity 0
+      width 100%
+      height 100%
+      z-index 100
+
+section.work-tiles.workTiles .work-tiles-items {
+  padding: 2px;
+  background-color: transparent;
+  margin-bottom: 2px;
+}
+section.work-tiles {
+  text-align: center;
+}
+
+.workTiles .portfolioInner {
+  position: relative;
+}
+.workTiles .portfolioInner {
+  padding: 2px;
+  overflow: hidden;
+}
+.workTiles .portfolioInner img {
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.workTiles .portfolioInner:hover img {
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.workTiles .portfolioInner .textOverlay {
+  background-color: rgba(292,0,0,0.5);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+.workTiles .portfolioInner:hover .textOverlay {
+  opacity: 1;
+}
+.workTiles .portfolioInner .textOverlay span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+  font-size: 2rem;
+  color: #fff;
+  overflow: hidden;
+  z-index: 999;
+  left: 0;
+  right: 0;
+  line-height: 26px;
+  text-align: center;
+}
+.workTiles .portfolioInner .textOverlay span {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.clients-home .clients-logos .gallery-buttons {
+  margin-top: 60px; 
+}
+
+@media screen and (max-width: 1200px) {
+  section.work-tiles .work-tiles-items span {
+    font-size: 50px;
+    line-height: 42px;
+    padding: 20px;
+  }
+}
+@media (max-width: 545px) {
+  section.work-tiles .work-tiles-items span {
+    font-size: 40px;
+    line-height: 36px;
+  }
+}
+@media screen and (max-width: 480px) {
+  section.work-tiles .work-tiles-items span {
+    font-size: 26px;
+    line-height: 26px;
+    padding: 10px;
+  }
+  section.work-tiles h2 {
+    font-size: 40px;
+  }
+}

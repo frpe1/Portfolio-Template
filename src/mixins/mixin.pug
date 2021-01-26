@@ -1,0 +1,232 @@
+
+//- show top headed responsive indicators
+mixin showResponsiveHelp()
+	.help-responsive
+		.xs .xs (0 - 575 px) extra small devices phones (portrait)
+			span.icon
+				i.fa.fa-mobile-alt
+		.sm .sm (575 - 767 px) small devices phones (landscapes)
+			span.icon
+				i.fa.fa-mobile-alt
+		.md .md (768 - 991 px) medium device tables/ipad
+			span.icon
+				i.fa.fa-tablet-alt
+		.lg .lg (992 - 1199 px) large device desktop/ (landscapes tables)
+			span.icon
+				i.fa.fa-tablet-alt
+			span.icon
+				i.fa.fa-laptop
+		.xl .xl (1200 - oo px) extra large device desktop
+			span.icon
+				i.fa.fa-laptop
+		#help-responsive-size
+
+//- insert som empty space
+mixin insertSpace(n)
+	.space(style=`height:${n}px`)
+
+//- show bootstrap base html scaffolding, for making it more easy
+//- to adjust font-size, colors, line-height etc
+mixin showBootstrapBaseScaffolding()
+	.scaffold
+		h1.bd-title Typography & Scaffolding
+		p Showing HTML5 elements, bootstrap elements and setting up some base contents elements
+		.scaffold__header
+			h2
+				span.bd-content-tile Headings
+			p All headings from h1 through h6
+		.scaffold__body
+			h1.h1 H1 header
+			h2.h2 H2 header
+			h3.h3 H3 header
+			h4.h4 H4 header
+			h5.h5 H5 header
+			h6.h6 H6 header
+		.scaffold__header
+			h2
+				span.bd-content-tile Customizing headings
+			p Show header with some muted extra text
+		.scaffold__body
+			h3.h3 H3 display header
+				small.text-muted Some small muted text
+		.scaffold__header
+			h2
+				span.bd-content-tile Inline text elements
+			p Basic Inline html5 elements
+		.scaffold__body
+			p 	Using p-tag to show how text will be rendered. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+
+			p
+				| You can use the mark tag to 
+				mark highlight with mark-tag
+				|  text.
+			p
+				del This using the del-tag for showing a text is deleted.
+			p
+				s This using the s-tag showing that the text is no longer accurate.
+			p
+				ins This use the ins-tag, is meant to be treated as an addition to the document.
+			p
+				u This use the u-tag. Setting the text as underlined.
+			p
+				small The Small-tag is used to set text as a "fine print".
+			p
+				strong This makes the text bold, using strong-tag.
+			p
+				em This using em-tag set the text shown as italic.
+
+		.scaffold__header
+			h2
+				span.bd-content-tile More about the p-tag
+			p Showing more how p-tag will behave with more text
+		.scaffold__body
+			p 	This is a p tag, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa id neque aliquam vestibulum. Velit aliquet sagittis id consectetur purus. Platea dictumst quisque sagittis purus sit.
+			p 	This is a p tag, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa id neque aliquam vestibulum. Velit aliquet sagittis id consectetur purus. Platea dictumst quisque sagittis purus sit.
+			p 	This is a p tag, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa id neque aliquam vestibulum. Velit aliquet sagittis id consectetur purus. Platea dictumst quisque sagittis purus sit.
+			p 	This is a p tag, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa id neque aliquam vestibulum. Velit aliquet sagittis id consectetur purus. Platea dictumst quisque sagittis purus sit.
+		.scaffold__header
+			h2
+				span.bd-content-tile Responsive images
+			p How bootstrap will show img-tag behaves
+		.scaffold__body
+			.scaffold__box
+				h4 .img-fluid
+				img.img-fluid(src="/img/vendors/test/test-960x600.png")
+			.scaffold__box
+				h4 .img-thumbnail
+				img.img-fluid(src="/img/vendors/test/test-150x150.png")
+		.scaffold__header
+			h2
+				span.bd-content-tile Media object
+			p Media-object is very common elements, used to build more complex constructions. Used in chat, blog, info etc
+		.scaffold__body
+			.scaffold__box
+				h4 Simple media object
+				.media
+					img.mr-3(src='/img/vendors/test/test-64x64.png', alt='...')
+					.media-body
+						h5.mt-0 Media heading
+						|     Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+			.scaffold__box
+				h4 nested media object
+				.media
+					img.mr-3(src='/img/vendors/test/test-64x64.png', alt='...')
+					.media-body
+						h5.mt-0 Media heading
+						|     Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+						.media.mt-3
+							a.mr-3(href='#')
+								img.mr-3(src='/img/vendors/test/test-64x64.png', alt='...')
+							.media-body
+								h5.mt-0 Media heading
+								|         Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+
+
+//-
+	mixin insertHeader()
+		.paragraph_puff_wrapper_container
+			.paragraph_puff_wrapper(style='')
+				.blurb_inner(style='')
+					a(href='/salonger/malmo-sodertull/')
+					.hover_blurb_container(style="background-image: url('/upload/blurbs/picture/so-dertull1.jpg?timeString=20180619112529&w=1024&h=&r=1&crop=1');")
+						a(href='/salonger/malmo-sodertull/')
+						a(href='/salonger/malmo-sodertull/')
+							img(src='/upload/blurbs/picture/so-dertull1.jpg?timeString=20180619112529&w=1024&h=&r=1&crop=1', alt='', title='')
+						//- <div class="hover_blurb"></div>
+					h4 Malmö - Södertull
+					p
+						| S. Tullgatan 4
+						br
+						| 211 40 MALMÖ
+						br
+						a.phone(href='tel:040-12 65 65') 040-12 65 65
+						a.book(href='https://boka.itsperfect.se/50475483/Lokation/index/1', target='_blank') Boka tid
+					p
+						| ÖPPETTIDER
+						br
+						| Månd / Tis / Ons / Fre 9-18
+						br
+						| Torsdag 9-19
+						br
+						| Lördag 9-14
+						br
+					a.blurblink(href='/salonger/malmo-sodertull/') Läs mer
+
+	mixin insertSalongBox()
+		.card.mb-4.box-shadow
+			a.thumbnail-image(href="the-venue-ostermalm.html")
+				img.card-img-top(src='/img/venue/ostermalm.jpeg', alt='Östermalm')
+			.card-body
+				b.title.
+					ÖSTERMALM
+				p.address
+					| Karlavägen 7 
+					br
+					| 114 24 Stockholm
+					br
+				p.phone
+					a(href='tel:+4684115006') 08-411 50 06
+				p.email
+					a(href='mailto:info@thevenue.se') info@thevenue.se 								
+				.d-flex.justify-content-center.align-items-center
+					button.btn.btn-xl.btn-secondary(type='button') Boka Tid
+				p.open-time.
+					Mån-Fre 09.00-18.00
+				//-
+					a.soc-icon.soc-instagram(href='//instagram.com/team_thevenue/', target='_blank')
+						i.fusion-icon-instagram
+					a.soc-icon.soc-facebook(href='//www.facebook.com/the-VENUE-654733741322839/', target='_blank')
+						i.fusion-icon-facebook
+				.d-flex.justify-content-center.align-items-center
+					button.btn.btn-xl.btn-outline-secondary(type='button') Läs mer
+
+
+	mixin insertSalongBoxOriginal()
+		.card.mb-4.box-shadow
+			a.thumbnail-image(href="the-venue-ostermalm.html")
+				img.card-img-top(src='/img/venue/ostermalm.jpeg', alt='Östermalm')
+			.card-body
+				b.title
+					a(href='https://www.thevenue.se/the-venue-ostermalm') ÖSTERMALM
+				p
+					| Karlavägen 7 
+					br
+					| 114 24 Stockholm
+					br
+					a(href='tel:+4684115006') 08-411 50 06
+				p.email
+					a(href='mailto:info@thevenue.se') info@thevenue.se 								
+				.d-flex.justify-content-center.align-items-center
+					button.btn.btn-xl.btn-outline-secondary(type='button') Boka Tid
+				p.open-time.
+					Måndag-Fredag 09.00-18.00
+				a.soc-icon.soc-instagram(href='//instagram.com/team_thevenue/', target='_blank')
+					i.fusion-icon-instagram
+				a.soc-icon.soc-facebook(href='//www.facebook.com/the-VENUE-654733741322839/', target='_blank')
+					i.fusion-icon-facebook
+
+				.d-flex.justify-content-center.align-items-center
+					button.btn.btn-xl.btn-outline-secondary(type='button') Läs mer
+
+//--------------------------------------------
+
+
+
+mixin insertLinkMenuItem(title, url)
+	li.nav-item.mx-0.mx-lg-1
+		a.nav-link.link-item.rounded.js-scroll-trigger(href=`${url}`)= title
+
+mixin insertPortfolioItem(size, title, text)
+	li.col-xs-6.col-md-3.work-tiles-items
+		.portfolioInner
+		a(href='#')
+			img.img-responsive(alt='Image Alt 12' src=`//placehold.it/${size}`)
+		.textOverlay
+			span= title
+			span= text
+			
+
+mixin addIcon(name, size=1)
+	i(class=`fas ${name} fa-${size}x`)
+mixin addBrand(name, size=1)
+	i(class=`fab ${name} fa-${size}x`)

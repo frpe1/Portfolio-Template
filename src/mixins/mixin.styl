@@ -1,0 +1,88 @@
+// Help Utility
+.help-responsive
+	position fixed
+	top 0
+	left 0
+	width 100%
+	min-height 20px
+	z-index 99999
+	background-color #000000
+	color #ffffff
+	text-align: center
+	padding 10px
+	#help-responsive-size
+		font-size 10pt
+		color #aaaaaa
+	.xs
+	.sm
+	.md
+	.lg
+	.xl
+		display none
+	@media (min-width: 0px) and (max-width: 575px)
+		.xs
+			display block
+	@media (min-width: 576px) and (max-width: 767px)
+		.sm
+			display block
+	@media (min-width: 768px) and (max-width: 991px)
+		.md
+			display block
+	@media (min-width: 992px) and (max-width: 1199px)
+		.lg
+			display block
+	@media (min-width: 1200px)
+		.xl
+			display block
+.space
+    display block
+    width 100%
+	min-height 0px
+
+.scaffold
+	&__header
+		border-top 1px solid #999999
+		border-bottom 1px solid #999999
+		padding 10px
+		background-color #f9f9f9
+	&__body
+		padding 10px
+	&__box
+		margin-bottom 20px
+
+.p-0
+	padding 0
+.p-10
+	padding 10px
+.p-rem-3
+	padding 3rem
+	@media (max-width: 575px)
+		padding 1rem    
+.p-rem-7
+	padding 7rem
+	@media (max-width: 767px)
+		padding 1rem
+.m-0
+	margin 0
+.m-10
+	margin 10px
+
+.min-h-100
+	min-height 100%
+
+.text-center
+	&-xs 
+		@media (max-width: 575px)
+			text-align:  center
+	&-sm
+		@media (max-width: 767px)
+			text-align:  center
+	&-md
+		@media (max-width: 991px)
+			text-align:  center
+
+buildThemes(args)
+	for key, v in args
+		.{key}
+			background-color v["base-background-color"] ;
+			color v["text-base-color"]
