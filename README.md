@@ -41,3 +41,34 @@ Then copy everything in the map dist/ and place it to your live server
 
 The workflow is that you doing the changes localy on your computer 
 and then compile it to an end-production version and uploading it to your live-server.
+
+
+## Project structure
+
+assets/
+
+Here you'll found all the external assets you downloaded or will use for your project.
+
+
+img/
+
+Put the image you will need for the project here
+
+layouts/
+
+Here you found the base-layout file. Change it if you wanna change
+the meta information on the page, or if you need to include some external script and stylesheetslink
+etc
+
+mixins/
+
+Here you could found helpfiles for your project, if you not wanna include it directly
+in your main page, so put it here!
+
+portfolio/
+
+Here is the main folder for your project, where you will spend mostly of the time of your project.
+There is a javascriptfile here for where you put all your javascript code, 
+portfolio.pug for creating the design of the page and stylus file .styl where you 
+code all your stylesheet, but doing that with help of coding stylus and not css directly.
+
