@@ -27,7 +27,9 @@ $master-head-bg-image = "//placehold.it/1920x1080" // "https://wallpaperaccess.c
 $portfolio-modal-bg-color = #141417 //  #152631
 $card-bg-color = #27272d // #152631
 $card-title-color = white
+$card-text-color =  #ccc
 $card-img-bg-overlay-color = rgba(0,0,0,.7)
+$two-by-two-col-fw-bg-color-1 = #27272d
 // ---- Extra 
 .no-gutters
   margin-right 0
@@ -278,6 +280,18 @@ a
 .showcase-text
   padding 7rem !important
       
+// ---- .section-2x2-col-fw
+
+.section-2x2-col-fw-img
+  min-height 30rem
+  background-size cover
+
+.section-2x2-col-fw-text
+  padding 7rem !important 
+
+.two-by-two-col-fw-bg-color-1
+  background-color $two-by-two-col-fw-bg-color-1
+
 // ---- Items
 
 // -------- Project-items
@@ -339,8 +353,6 @@ a
   padding-left 0
   padding-right 0
   
-
-
 .card
   background-color $card-bg-color
   .card-img-overlay.card-img-dark-overlay
@@ -352,7 +364,8 @@ a
       bottom 0
       left 0
       right 0
-      background $card-img-bg-overlay-color
+      background linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000000 100%)
+      //background $card-img-bg-overlay-color
       z-index: -1
     &.card-content-bottom
       display flex
@@ -366,9 +379,15 @@ a
     color $card-title-color
     font-weight bold
   .card-category
-    font-size 9pt
+    font-size 8pt
     text-transform uppercase
     padding-bottom 5px
+    letter-spacing:  0.05em
+    color #888
+  .card-text
+    color $card-text-color
+    letter-spacing 0.02em
+    word-spacing 0.05em
   @media screen and (max-width: 767px)
     // border 1px solid red
     width 100% !important
