@@ -87,12 +87,14 @@ const pages_section =
 
 var part = [
   new CleanWebpackPlugin(),
+  /*
   new HtmlWebpackPlugin({
     filename: 'portfolio.html',
     template: 'src/portfolio/portfolio.pug',
     inject: true,
     chunks: ['portfolio'] 
   }),
+  */
 ];
 
 pages_section.forEach(page => {
@@ -106,6 +108,7 @@ pages_section.forEach(page => {
     })
   );
 });
+
 
 
 const config = {

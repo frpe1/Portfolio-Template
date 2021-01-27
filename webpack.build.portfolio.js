@@ -38,25 +38,6 @@ const scss = {
   })
 };
 
-/*
-const scss = {
-  test: /\.s[ac]ss$/,
-  use: extractCSS.extract({use: ["css-loader", "sass-loader"]})
-};
-*/
-/*
-const scss = {
-  test: /\.s[ac]ss$/,
-  use: [
-    // Creates `style` nodes from JS strings
-    "style-loader",
-    // Translates CSS into CommonJS
-    "css-loader",
-    // Compiles Sass to CSS
-    "sass-loader",
-  ],
-};
-*/
 
 /*
 const resources = {
@@ -115,17 +96,20 @@ const pages_section =
 
 var part = [
   new CleanWebpackPlugin(),
+
   new HtmlWebpackPlugin({
     filename: 'index.html',
     template: 'src/portfolio/portfolio.pug',
     inject: true,
     chunks: ['portfolio'] 
   }),
+ 
 ];
 
 
 pages_section.forEach(page => {
   console.log(page);
+  /*
   part.push(
     new HtmlWebpackPlugin({
       filename: page + '.html',
@@ -134,11 +118,11 @@ pages_section.forEach(page => {
       chunks: ['portfolio'] 
     })
   );
+  */
   part.push(new ExtractTextPlugin('[name].[hash].css'));
 });
 
-
-part.push(new ExtractTextPlugin('style.[hash].css'));
+//part.push(new ExtractTextPlugin('style.[hash].css'));
 
 const config = {
   mode: 'production',
@@ -152,7 +136,7 @@ const config = {
     // publicPath: '/'
   },
   module: {
-    rules: [woff, eot, jpeg, pug, scss, styl ]
+    rules: [woff, eot, jpeg, styl, scss, pug  ]
   },
   plugins: part
 };

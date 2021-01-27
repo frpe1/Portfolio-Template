@@ -10,7 +10,7 @@ $custom-dark: #252627; // #ffdd00; //
 $theme-colors: (
     primary:    $custom-primary,
     secondary: $custom-secondary,
-    dark: $custom-dark
+    dark: $custom-secondary
 );
 
 @import "bootstrap";
