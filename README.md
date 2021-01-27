@@ -4,12 +4,16 @@
 
 Portfolio template
 
+## Preview
+
+![Image of Portfolio Template](http://utopiafx.se/uA84oq09463812742cru73/Screenshot_2021-01-26%20test.png)
+
 ## Requirements
 
 This template is using PUG and STYLUS. 
 You'll need to install npm, node, pug, stylus, and webpack in order to make it work.
 
-## Use
+## How to use
 
 First you download the project into a folder with git.
 Then go to the folder and type
@@ -74,11 +78,6 @@ Here is the main folder for your project, where you will spend mostly of the tim
 There is a javascriptfile here for where you put all your javascript code, 
 portfolio.pug for creating the design of the page and stylus file .styl where you 
 code all your stylesheet, but doing that with help of coding stylus and not css directly.
-
-## Screenshots
-
-![Image of Portfolio Template](http://utopiafx.se/uA84oq09463812742cru73/Screenshot_2021-01-26%20test.png)
-
 
 ## License
 

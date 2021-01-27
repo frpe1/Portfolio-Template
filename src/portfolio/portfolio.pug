@@ -1,9 +1,7 @@
 extends ../layouts/layout-portfolio.pug
 
 include ../mixins/mixin.pug
-
-
-
+ 
 block body
 
 	//- Including data! (see data.pug file)
@@ -270,8 +268,41 @@ block body
 					.col-lg-6.my-auto.my-auto.section-2x2-col-fw-text
 						h2 Lorem Ipsum Title
 						p.mb-0 When you use a theme created by Start Bootstrap, you know that the theme will look great on any device, whether it's a p
-					
 		
+		section.section-carousel-with-fix-height-and-full-width.section-page
+			.row
+				.col-lg-12
+					h2 Carousel with fix height and full width		
+			#carouselExampleInterval.section-carousel.carousel.slide(data-bs-ride='carousel')
+				.carousel-inner.section-carousel-inner
+					.carousel-item.active
+						.bg-image-full(style="background-image: url('//placehold.it/2440x1440/4ac/fff')" alt='...')
+					.carousel-item
+						.bg-image-full(style="background-image: url('//placehold.it/2440x1440/45c/fff')" alt='...')
+					.carousel-item
+						.bg-image-full(style="background-image: url('//placehold.it/2440x1440/35a/fff')" alt='...')
+				a.carousel-control-prev(href='#carouselExampleInterval' role='button' data-bs-slide='prev')
+					span.carousel-control-prev-icon(aria-hidden='true')
+					span.visually-hidden Previous
+				a.carousel-control-next(href='#carouselExampleInterval' role='button' data-bs-slide='next')
+					span.carousel-control-next-icon(aria-hidden='true')
+					span.visually-hidden Next			
+			//-
+				#carouselExampleInterval.section-carousel.carousel.slide(data-bs-ride='carousel')
+					.carousel-inner.section-carousel-inner
+						.carousel-item.active(data-bs-interval='3000')
+							img.d-block.w-100(src='//placehold.it/2440x1440/fff' alt='...')
+						.carousel-item(data-bs-interval='2000')
+							img.d-block.w-100(src='//placehold.it/2440x1440' alt='...')
+						.carousel-item
+							img.d-block.w-100(src='//placehold.it/2440x1440/aaa' alt='...')
+					a.carousel-control-prev(href='#carouselExampleInterval' role='button' data-bs-slide='prev')
+						span.carousel-control-prev-icon(aria-hidden='true')
+						span.visually-hidden Previous
+					a.carousel-control-next(href='#carouselExampleInterval' role='button' data-bs-slide='next')
+						span.carousel-control-next-icon(aria-hidden='true')
+						span.visually-hidden Next
+
 		//- section.full-width-column
 		
 		
