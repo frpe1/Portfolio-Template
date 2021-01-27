@@ -29,11 +29,8 @@ block body
 					+insertLinkMenuItem("CONTACT","#contact")
 
 	.content-wrap
-		header.master-head.text-center
-			.header-content.container.d-flex.align-items-center.flex-column
-				h4.sub-title Welcome to my portfolio!
-				h1.main-title Main title here
-				a.btn.btn-primary.btn-x1.text-uppercase.js-scroll-trigger(href="#projects") Explore!
+		+insertHeader(heroData)
+
 		section#arts
 		
 		+insertSectionFullWidth(sectionFullWidthData)
@@ -537,8 +534,6 @@ block body
 		#portfolioModal1.portfolio-modal.modal.fade(tabindex='-1' role='dialog' aria-hidden='true')
 			.modal-dialog.modal-dialog-centered.modal-xs
 				.modal-content
-					//.close-modal(data-dismiss='modal')
-					//	i.fa.fa-2.circle
 					.container
 						.row.justify-content-center
 							.col-lg-12

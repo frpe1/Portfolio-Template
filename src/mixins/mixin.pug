@@ -145,7 +145,13 @@ mixin addIcon(name, size=1)
 mixin addBrand(name, size=1)
 	i(class=`fab ${name} fa-${size}x`)
 
-
+mixin insertHeader(data)
+	header.master-head.text-center(style=`background-image: ${data.linear} , url(${data.img})`)
+		.header-content.container.d-flex.align-items-center.flex-column
+			h4.sub-title Welcome to my portfolio!
+			h1.main-title Main title here
+			a.btn.btn-primary.btn-x1.text-uppercase.js-scroll-trigger(href="#projects") Explore!
+			
 mixin insertSectionFullWidth(data)
 	section#news.section-page
 		.section-header
