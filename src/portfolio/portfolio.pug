@@ -6,14 +6,30 @@ block body
 	//- +showResponsiveHelp()
 	//- +insertSpace(60)
 
-	// Navigation
-	nav#mainNav.navbar.navbar-expand-lg.text-uppercase.fixed-top(data-target="#mainNav")
+	//- Navigation
+	//-
+		nav#mainNav.navbar.navbar-expand-lg.text-uppercase.fixed-top(data-target="#mainNav").navbar-dark.bg-primary
+			.container
+				a.navbar-brand.js-scroll-trigger(href='#page-top') Your Website
+				.navbar-toggler.navbar-toggler-right.font-weight-bold.hamburger-icon-color.rounded(type='button', data-toggle='collapse', data-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
+					i.fas.fa-bars
+				#navbarResponsive.collapse.navbar-collapse.justify-content-end
+					ul.navbar-nav.ml-auto.top-nav-links
+						+insertLinkMenuItem("ARTS","#arts")
+						+insertLinkMenuItem("NEWS","#news")
+						+insertLinkMenuItem("PROJECTS","#projects")
+						+insertLinkMenuItem("WORKS","#works")
+						+insertLinkMenuItem("ABOUT","#about")
+						+insertLinkMenuItem("RESUME","#resume")
+						+insertLinkMenuItem("CONTACT","#contact")
+	//- nav#mainNav.navbar.navbar-expand-lg.text-uppercase.fixed-top(data-target="#mainNav").navbar-dark.bg-primary
+	nav#mainNav.navbar.navbar-expand-lg.fixed-top
 		.container
 			a.navbar-brand.js-scroll-trigger(href='#page-top') Your Website
-			.navbar-toggler.navbar-toggler-right.font-weight-bold.hamburger-icon-color.rounded(type='button', data-toggle='collapse', data-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
+			.navbar-toggler.navbar-toggler-right.font-weight-bold.hamburger-icon-color.rounded(type='button', data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
 				i.fas.fa-bars
-			#navbarResponsive.collapse.navbar-collapse
-				ul.navbar-nav.ml-auto.top-nav-links
+			#navbarSupportedContent.collapse.navbar-collapse.justify-content-end
+				ul.navbar-nav.nav.top-nav-links
 					+insertLinkMenuItem("ARTS","#arts")
 					+insertLinkMenuItem("NEWS","#news")
 					+insertLinkMenuItem("PROJECTS","#projects")
@@ -21,6 +37,26 @@ block body
 					+insertLinkMenuItem("ABOUT","#about")
 					+insertLinkMenuItem("RESUME","#resume")
 					+insertLinkMenuItem("CONTACT","#contact")
+				//-
+					li.nav-item
+						a.nav-link.active(aria-current='page' href='#') Home
+					li.nav-item
+						a.nav-link(href='#') Link
+					li.nav-item.dropdown
+						a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
+							| Dropdown
+						ul.dropdown-menu(aria-labelledby='navbarDropdown')
+							li
+								a.dropdown-item(href='#') Action
+							li
+								a.dropdown-item(href='#') Another action
+							li
+								hr.dropdown-divider
+							li
+								a.dropdown-item(href='#') Something else here
+					li.nav-item
+						a.nav-link.disabled(href='#' tabindex='-1' aria-disabled='true') Disabled
+
 	.content-wrap
 		header.master-head.text-center
 			.header-content.container.d-flex.align-items-center.flex-column
@@ -38,21 +74,21 @@ block body
 							h2.title News / Latest
 			.section-body
 				.news-items
-					a.news-item(data-toggle='modal', href='#portfolioModal1')
+					a.news-item(data-bs-toggle="modal", href='#portfolioModal1')
 						.news-item__header
 							img.news-item__header--image(src="//placehold.it/805x330")
 						.news-item__caption
 							h3.news-item__caption--title Your work items title
 							p.news-item__caption--text Lorem ipsum more about this Jan 12, 2021
 				.news-items
-					a.news-item(data-toggle='modal', href='#portfolioModal1')
+					a.news-item(data-bs-toggle="modal", href='#portfolioModal1')
 						.news-item__header
 							img.news-item__header--image(src="//placehold.it/805x330")
 						.news-item__caption
 							h3.news-item__caption--title Your work items title
 							p.news-item__caption--text Lorem ipsum more about this Jan 12, 2021
 				.news-items
-					a.news-item(data-toggle='modal', href='#portfolioModal1')
+					a.news-item(data-bs-toggle="modal", href='#portfolioModal1')
 						.news-item__header
 							img.news-item__header--image(src="//placehold.it/805x330")
 						.news-item__caption
@@ -99,7 +135,7 @@ block body
 					.col-lg-12
 						h2 Four Column with equal height		
 				.row.mb-4
-					.col-xl-3.col-lg-6.col-md-6.col-sm-12.card-deck
+					.col-xl-3.col-lg-6.col-md-6.col-sm-12.d-flex
 						.card.mb-4
 							img.card-img-top(src='//placehold.it/330x330' alt='...')
 							.card-body
@@ -109,7 +145,7 @@ block body
 									| Some quick example text to build on the card title and make up the bulk of the card's content. <br /> here we type some more text
 							.card-footer
 								a.btn.btn-primary(href='#') Go somewhere
-					.col-xl-3.col-lg-6.col-md-6.col-sm-12.card-deck
+					.col-xl-3.col-lg-6.col-md-6.col-sm-12.d-flex
 						.card.mb-4
 							img.card-img-top(src='//placehold.it/330x330' alt='...')
 							.card-body
@@ -119,7 +155,7 @@ block body
 									| Some quick example text to build on the card title and make up the bulk of the card's content.
 							.card-footer
 								a.btn.btn-primary(href='#') Go somewhere
-					.col-xl-3.col-lg-6.col-md-6.col-sm-12.card-deck
+					.col-xl-3.col-lg-6.col-md-6.col-sm-12.d-flex
 						.card.mb-4
 							img.card-img-top(src='//placehold.it/330x330' alt='...')
 							.card-body
@@ -129,7 +165,7 @@ block body
 									| Some quick example text to build on the card title and make up the bulk of the card's content.
 							.card-footer
 								a.btn.btn-primary(href='#') Go somewhere
-					.col-xl-3.col-lg-6.col-md-6.col-sm-12.card-deck
+					.col-xl-3.col-lg-6.col-md-6.col-sm-12.d-flex
 						.card.mb-4
 							img.card-img-top(src='//placehold.it/330x330' alt='...')
 							.card-body
@@ -144,7 +180,7 @@ block body
 			.container
 				.row
 					.col-lg-12
-						h2 Four Column		
+						h2 Four Column	
 				.row.mb-4
 					.col-xl-3.col-lg-6.col-md-6.col-sm-12
 						.card.mb-4
@@ -221,13 +257,13 @@ block body
 									| Some quick example text to build on the card title and make up the bulk of the card's content. <br /> and this one is using <strong>.card-content-bottom</strong> to make it to the bottom
 								a.btn.btn-primary(href='#') Go somewhere
 
-		section.five-column
+		section.five-column-with-equal-height
 			.container
 				.row
 					.col-lg-12
-						h2 Five Column		
+						h2 Five Column with equal height
 				.row.mb-4
-					.col-md
+					.col-md.d-flex
 						.card.mb-4
 							img.card-img-top(src='//placehold.it/330x330' alt='...')
 							.card-body
@@ -237,7 +273,7 @@ block body
 									| Some quick example text to build on the card title and make up the bulk of the card's content. <br /> here we type some more text
 							.card-footer
 								a.btn.btn-primary(href='#') Go somewhere
-					.col-md
+					.col-md.d-flex
 						.card.mb-4
 							img.card-img-top(src='//placehold.it/330x330' alt='...')
 							.card-body
@@ -247,7 +283,7 @@ block body
 									| Some quick example text to build on the card title and make up the bulk of the card's content.
 							.card-footer
 								a.btn.btn-primary(href='#') Go somewhere
-					.col-md
+					.col-md.d-flex
 						.card.mb-4
 							img.card-img-top(src='//placehold.it/330x330' alt='...')
 							.card-body
@@ -257,7 +293,7 @@ block body
 									| Some quick example text to build on the card title and make up the bulk of the card's content.
 							.card-footer
 								a.btn.btn-primary(href='#') Go somewhere
-					.col-md
+					.col-md.d-flex
 						.card.mb-4
 							img.card-img-top(src='//placehold.it/330x330' alt='...')
 							.card-body
@@ -267,7 +303,7 @@ block body
 									| Some quick example text to build on the card title and make up the bulk of the card's content. <br /> asodjfoasjdofjs <br /> jeorwijerowejr
 							.card-footer
 								a.btn.btn-primary(href='#') Go somewhere
-					.col-md
+					.col-md.d-flex
 						.card.mb-4
 							img.card-img-top(src='//placehold.it/330x330' alt='...')
 							.card-body
