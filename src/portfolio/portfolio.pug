@@ -2,27 +2,17 @@ extends ../layouts/layout-portfolio.pug
 
 include ../mixins/mixin.pug
 
+
+
 block body
+
+	//- Including data! (see data.pug file)
+	include data.pug
+
 	//- +showResponsiveHelp()
 	//- +insertSpace(60)
 
 	//- Navigation
-	//-
-		nav#mainNav.navbar.navbar-expand-lg.text-uppercase.fixed-top(data-target="#mainNav").navbar-dark.bg-primary
-			.container
-				a.navbar-brand.js-scroll-trigger(href='#page-top') Your Website
-				.navbar-toggler.navbar-toggler-right.font-weight-bold.hamburger-icon-color.rounded(type='button', data-toggle='collapse', data-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
-					i.fas.fa-bars
-				#navbarResponsive.collapse.navbar-collapse.justify-content-end
-					ul.navbar-nav.ml-auto.top-nav-links
-						+insertLinkMenuItem("ARTS","#arts")
-						+insertLinkMenuItem("NEWS","#news")
-						+insertLinkMenuItem("PROJECTS","#projects")
-						+insertLinkMenuItem("WORKS","#works")
-						+insertLinkMenuItem("ABOUT","#about")
-						+insertLinkMenuItem("RESUME","#resume")
-						+insertLinkMenuItem("CONTACT","#contact")
-	//- nav#mainNav.navbar.navbar-expand-lg.text-uppercase.fixed-top(data-target="#mainNav").navbar-dark.bg-primary
 	nav#mainNav.navbar.navbar-expand-lg.fixed-top
 		.container
 			a.navbar-brand.js-scroll-trigger(href='#page-top') Your Website
@@ -37,25 +27,6 @@ block body
 					+insertLinkMenuItem("ABOUT","#about")
 					+insertLinkMenuItem("RESUME","#resume")
 					+insertLinkMenuItem("CONTACT","#contact")
-				//-
-					li.nav-item
-						a.nav-link.active(aria-current='page' href='#') Home
-					li.nav-item
-						a.nav-link(href='#') Link
-					li.nav-item.dropdown
-						a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
-							| Dropdown
-						ul.dropdown-menu(aria-labelledby='navbarDropdown')
-							li
-								a.dropdown-item(href='#') Action
-							li
-								a.dropdown-item(href='#') Another action
-							li
-								hr.dropdown-divider
-							li
-								a.dropdown-item(href='#') Something else here
-					li.nav-item
-						a.nav-link.disabled(href='#' tabindex='-1' aria-disabled='true') Disabled
 
 	.content-wrap
 		header.master-head.text-center
@@ -64,37 +35,9 @@ block body
 				h1.main-title Main title here
 				a.btn.btn-primary.btn-x1.text-uppercase.js-scroll-trigger(href="#projects") Explore!
 		section#arts
-		section#news.section-page
-			.section-header
-				.container
-					.row.mb-4
-						.col-lg-12.text-center
-							// +addBrand("fa-unity",3)
-							+addIcon("fa-vr-cardboard",3)
-							h2.title News / Latest
-			.section-body
-				.news-items
-					a.news-item(data-bs-toggle="modal", href='#portfolioModal1')
-						.news-item__header
-							img.news-item__header--image(src="//placehold.it/805x330")
-						.news-item__caption
-							h3.news-item__caption--title Your work items title
-							p.news-item__caption--text Lorem ipsum more about this Jan 12, 2021
-				.news-items
-					a.news-item(data-bs-toggle="modal", href='#portfolioModal1')
-						.news-item__header
-							img.news-item__header--image(src="//placehold.it/805x330")
-						.news-item__caption
-							h3.news-item__caption--title Your work items title
-							p.news-item__caption--text Lorem ipsum more about this Jan 12, 2021
-				.news-items
-					a.news-item(data-bs-toggle="modal", href='#portfolioModal1')
-						.news-item__header
-							img.news-item__header--image(src="//placehold.it/805x330")
-						.news-item__caption
-							h3.news-item__caption--title Your work items title
-							p.news-item__caption--text Lorem ipsum more about this Jan 12, 2021
 		
+		+insertSectionFullWidth(sectionFullWidthData)
+
 		section.three-column
 			.container
 				.row

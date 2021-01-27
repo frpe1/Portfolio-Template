@@ -122,92 +122,6 @@ mixin showBootstrapBaseScaffolding()
 								|         Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
 
 
-//-
-	mixin insertHeader()
-		.paragraph_puff_wrapper_container
-			.paragraph_puff_wrapper(style='')
-				.blurb_inner(style='')
-					a(href='/salonger/malmo-sodertull/')
-					.hover_blurb_container(style="background-image: url('/upload/blurbs/picture/so-dertull1.jpg?timeString=20180619112529&w=1024&h=&r=1&crop=1');")
-						a(href='/salonger/malmo-sodertull/')
-						a(href='/salonger/malmo-sodertull/')
-							img(src='/upload/blurbs/picture/so-dertull1.jpg?timeString=20180619112529&w=1024&h=&r=1&crop=1', alt='', title='')
-						//- <div class="hover_blurb"></div>
-					h4 Malmö - Södertull
-					p
-						| S. Tullgatan 4
-						br
-						| 211 40 MALMÖ
-						br
-						a.phone(href='tel:040-12 65 65') 040-12 65 65
-						a.book(href='https://boka.itsperfect.se/50475483/Lokation/index/1', target='_blank') Boka tid
-					p
-						| ÖPPETTIDER
-						br
-						| Månd / Tis / Ons / Fre 9-18
-						br
-						| Torsdag 9-19
-						br
-						| Lördag 9-14
-						br
-					a.blurblink(href='/salonger/malmo-sodertull/') Läs mer
-
-	mixin insertSalongBox()
-		.card.mb-4.box-shadow
-			a.thumbnail-image(href="the-venue-ostermalm.html")
-				img.card-img-top(src='/img/venue/ostermalm.jpeg', alt='Östermalm')
-			.card-body
-				b.title.
-					ÖSTERMALM
-				p.address
-					| Karlavägen 7 
-					br
-					| 114 24 Stockholm
-					br
-				p.phone
-					a(href='tel:+4684115006') 08-411 50 06
-				p.email
-					a(href='mailto:info@thevenue.se') info@thevenue.se 								
-				.d-flex.justify-content-center.align-items-center
-					button.btn.btn-xl.btn-secondary(type='button') Boka Tid
-				p.open-time.
-					Mån-Fre 09.00-18.00
-				//-
-					a.soc-icon.soc-instagram(href='//instagram.com/team_thevenue/', target='_blank')
-						i.fusion-icon-instagram
-					a.soc-icon.soc-facebook(href='//www.facebook.com/the-VENUE-654733741322839/', target='_blank')
-						i.fusion-icon-facebook
-				.d-flex.justify-content-center.align-items-center
-					button.btn.btn-xl.btn-outline-secondary(type='button') Läs mer
-
-
-	mixin insertSalongBoxOriginal()
-		.card.mb-4.box-shadow
-			a.thumbnail-image(href="the-venue-ostermalm.html")
-				img.card-img-top(src='/img/venue/ostermalm.jpeg', alt='Östermalm')
-			.card-body
-				b.title
-					a(href='https://www.thevenue.se/the-venue-ostermalm') ÖSTERMALM
-				p
-					| Karlavägen 7 
-					br
-					| 114 24 Stockholm
-					br
-					a(href='tel:+4684115006') 08-411 50 06
-				p.email
-					a(href='mailto:info@thevenue.se') info@thevenue.se 								
-				.d-flex.justify-content-center.align-items-center
-					button.btn.btn-xl.btn-outline-secondary(type='button') Boka Tid
-				p.open-time.
-					Måndag-Fredag 09.00-18.00
-				a.soc-icon.soc-instagram(href='//instagram.com/team_thevenue/', target='_blank')
-					i.fusion-icon-instagram
-				a.soc-icon.soc-facebook(href='//www.facebook.com/the-VENUE-654733741322839/', target='_blank')
-					i.fusion-icon-facebook
-
-				.d-flex.justify-content-center.align-items-center
-					button.btn.btn-xl.btn-outline-secondary(type='button') Läs mer
-
 //--------------------------------------------
 
 
@@ -224,9 +138,29 @@ mixin insertPortfolioItem(size, title, text)
 		.textOverlay
 			span= title
 			span= text
-			
 
 mixin addIcon(name, size=1)
 	i(class=`fas ${name} fa-${size}x`)
+
 mixin addBrand(name, size=1)
 	i(class=`fab ${name} fa-${size}x`)
+
+
+mixin insertSectionFullWidth(data)
+	section#news.section-page
+		.section-header
+			.container
+				.row.mb-4
+					.col-lg-12.text-center
+						// +addBrand("fa-unity",3)
+						+addIcon("fa-vr-cardboard",3)
+						h2.title News / Latest
+		.section-body
+			each val in data
+				.news-items
+					a.news-item(data-bs-toggle="modal", href='#portfolioModal1')
+						.news-item__header
+							img.news-item__header--image(src=`${val.img}`)
+						.news-item__caption
+							h3.news-item__caption--title= val.title
+							p.news-item__caption--text= val.text

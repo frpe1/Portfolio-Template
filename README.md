@@ -65,6 +65,9 @@ mixins/
 Here you could found helpfiles for your project, if you not wanna include it directly
 in your main page, so put it here!
 
+In this folder you also find the data.pug file. The data.pug contain all the contents-data you wanna
+change for your project. This makes it more easier maintainable site
+
 portfolio/
 
 Here is the main folder for your project, where you will spend mostly of the time of your project.

@@ -1,18 +1,18 @@
 //@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap');
 //@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800&display=swap');
 //@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,500,600,700&display=swap')
-
+@import url('https://fonts.googleapis.com/css?family=Lato:400,500,600,700&display=swap')
 //@import '../mixins/mixin.styl'
 
 
 
-$basic-fonts = "Open Sans","Helvetica Neue",Helvetica,Arial,"sans-serif"
+$basic-fonts = "Lato", "Open Sans","Helvetica Neue",Helvetica,Arial,"sans-serif"
 $basic-line-height = 1.8em
 $bg-primary-color = #2980b9
-$bg-secondary-color = #141417 // #f39c12
-$bg-accent-color = #141417
+$bg-secondary-color = #141417 //  #141417 // #f39c12
+$bg-accent-color = #090d17 //  #141417 // #27272d
 $basic-bg-pattern = "https://www.transparenttextures.com/patterns/cross-stripes.png" // different pattern: "http://auventsbilodeau.com/images/backgrounds/dark-stripe.png"
-$basic-bg-color =  #141417 // different valour: #171717 // #080808 //
+$basic-bg-color =  #000410; //  #141417 // different valour: #171717 // #080808 //
 $basic-text-color = #bbb
 $basic-title-color = #f1f1f1
 $basic-link-color = #13aff0
@@ -21,17 +21,17 @@ $breadtext-color = #bbb
 $dark-text-color = #333
 $hamburger-icon-color = #13aff0
 $content-wrap-bg-pattern = none //"http://auventsbilodeau.com/images/backgrounds/dark-stripe.png"
-$content-wrap-bg-color = #14141c
+$content-wrap-bg-color = #000410; //  #14141c
 $section-bg-color = #050509
 $project-items-bg-color = #222
 $headings-font-family = "Open Sans","Helvetica Neue",Helvetica,Arial,"sans-serif"
-$master-head-bg-image = "//placehold.it/1920x1080" // "https://wallpaperaccess.com/full/403137.jpg"
+$master-head-bg-image = "//placehold.it/2440x1440" // "https://wallpaperaccess.com/full/403137.jpg"
 $portfolio-modal-bg-color = #141417 //  #152631
-$card-bg-color = #27272d // #152631
+$card-bg-color = $bg-accent-color // #152631
 $card-title-color = white
 $card-text-color =  #ccc
 $card-img-bg-overlay-color = rgba(0,0,0,.7)
-$two-by-two-col-fw-bg-color-1 = #27272d
+$two-by-two-col-fw-bg-color-1 = $bg-accent-color
 
 // ---- Changing bootstrap theme
 
@@ -275,6 +275,10 @@ a
   background-image linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000000 100%), url($master-head-bg-image)
   background-size cover
   background-position 50% 50%
+  height 100vh
+  @media screen and (max-width: 767px)
+    height auto
+    min-height 500px
 
 
 // ---- Sections
