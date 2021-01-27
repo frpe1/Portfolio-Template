@@ -29,8 +29,34 @@ const styl = {
 
 const scss = {
   test: /\.s[ac]ss$/,
+  use: ExtractTextPlugin.extract({
+      fallback: 'style-loader',
+      use: [
+        'css-loader',
+        'sass-loader'
+      ]
+  })
+};
+
+/*
+const scss = {
+  test: /\.s[ac]ss$/,
   use: extractCSS.extract({use: ["css-loader", "sass-loader"]})
 };
+*/
+/*
+const scss = {
+  test: /\.s[ac]ss$/,
+  use: [
+    // Creates `style` nodes from JS strings
+    "style-loader",
+    // Translates CSS into CommonJS
+    "css-loader",
+    // Compiles Sass to CSS
+    "sass-loader",
+  ],
+};
+*/
 
 /*
 const resources = {
