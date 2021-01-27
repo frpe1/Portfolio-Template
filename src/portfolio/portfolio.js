@@ -1,3 +1,5 @@
+
+import './portfolio.scss';
 import './portfolio.styl';
 
 (function($) {
@@ -21,7 +23,7 @@ import './portfolio.styl';
     });
   
     // Scroll to top button appear or disapear
-    $(document).scroll(function() {
+    $(document).on('scroll', function() {
       var scrollDistance = $(this).scrollTop();
       if (scrollDistance > 100) {
         $('.back-to-top').fadeIn();
@@ -31,16 +33,18 @@ import './portfolio.styl';
     });
   
     // Closes responsive menu when a scroll trigger link is clicked
-    $('.js-scroll-trigger').click(function(e) {
+    $('.js-scroll-trigger').on('click', function(e) {
       //e.preventDefault();
       $('.navbar-collapse').collapse('hide');
     });
   
     // Activate scrollspy to add active class to navbar items on scroll
+    /*
     $('body').scrollspy({
       target: '#mainNav',
       offset: 80
     });
+    */
   
     // Collapse Navbar
     var navbarCollapse = function() {
@@ -53,6 +57,6 @@ import './portfolio.styl';
     // Collapse now if page is not at top
     navbarCollapse();
     // Collapse the navbar when page is scrolled
-    $(window).scroll(navbarCollapse);  
+    $(window).on('scroll', navbarCollapse);  
   
 })(jQuery);

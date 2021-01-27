@@ -6,33 +6,15 @@ const { CleanWebpackPlugin }  = require('clean-webpack-plugin');
 const HtmlWebpackPugPlugin    = require('html-webpack-pug-plugin');
 //const { stylus_plugin  } = require('stylus_plugin');
 //const ExtractTextPlugin = require("extract-text-webpack-plugin");
-var glob                      = require('glob');
 
 const ExtractTextPlugin       = require("extract-text-webpack-plugin");
 const extractCSS              = new ExtractTextPlugin('css/style.css');
 
-const pug = {
-    test: /\.pug$/,
-    use: ['html-loader?attrs=false', 'pug-html-loader']
-};
 
-const styl = {
-    test: /\.styl$/,
-    use: ExtractTextPlugin.extract({
-        fallback: 'style-loader',
-        use: [
-          'css-loader',
-          'stylus-loader'
-        ]
-    })
-};
 
-const scss = {
-  test: /\.s[ac]ss$/,
-  use: extractCSS.extract({use: ["css-loader", "sass-loader"]})
-};
+var glob                      = require('glob');
 
-/*
+// Förslag 1
 const resources = {
   test: /\.(jpg|JPG|jpeg|png|gif|mp3|svg|ttf|woff2|woff|eot)$/gi,
   use: [
@@ -45,31 +27,18 @@ const resources = {
     }    
   ]
 };
-*/
 
-
+// Förslag 2
 const woff = 
 {
   test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-  use: {
-    loader: 'url-loader?limit=10000',
-    options: {
-      name: '[name].[ext]',
-      outputPath: 'fonts/'
-    }
-  }    
+  use: 'url-loader?limit=10000',
 };
 
 const eot =
 {
   test: /\.(ttf|eot|svg)(\?[\s\S]+)?$/,
-  use: {
-    loader: 'file-loader',
-    options: {
-      name: '[name].[ext]',
-      outputPath: 'fonts/'
-    }
-  }    
+  use: 'file-loader',
 };
 
 const jpeg = {
@@ -80,23 +49,51 @@ const jpeg = {
   ]
 };
 
+const pug = {
+    test: /\.pug$/,
+    use: ['html-loader?attrs=false', 'pug-html-loader']
+};
+
+
+
+const styl = {
+    test: /\.styl$/,
+    use: [
+      { loader: 'style-loader'},
+      { loader: 'css-loader'},
+      { loader: 'stylus-loader'}
+    ]
+};
+
+const scss = {
+  test: /\.s[ac]ss$/,
+  use: [
+    // Creates `style` nodes from JS strings
+    "style-loader",
+    // Translates CSS into CommonJS
+    "css-loader",
+    // Compiles Sass to CSS
+    "sass-loader",
+  ],
+};
+
+    
 const pages_section =
   fs
     .readdirSync(path.resolve(__dirname, 'src/portfolio/'))
     .filter(fileName => fileName.endsWith('.pug'))
     .map(filename => filename.replace('.pug',''));
-
+  
 
 var part = [
   new CleanWebpackPlugin(),
   new HtmlWebpackPlugin({
-    filename: 'index.html',
+    filename: 'portfolio.html',
     template: 'src/portfolio/portfolio.pug',
     inject: true,
     chunks: ['portfolio'] 
   }),
 ];
-
 
 pages_section.forEach(page => {
   console.log(page);
@@ -108,25 +105,22 @@ pages_section.forEach(page => {
       chunks: ['portfolio'] 
     })
   );
-  part.push(new ExtractTextPlugin('[name].[hash].css'));
 });
 
 
-part.push(new ExtractTextPlugin('style.[hash].css'));
-
 const config = {
-  mode: 'production',
+ 
   entry: {
     portfolio: './src/portfolio/portfolio.js'
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, '/dist'),
     filename: '[name].[contenthash].bundle.js',
     chunkFilename: '[name].[contenthash].bundle.js',
     // publicPath: '/'
   },
   module: {
-    rules: [woff, eot, jpeg, pug, scss, styl ]
+    rules: [woff, eot, jpeg, pug, scss, styl]
   },
   plugins: part
 };

@@ -1,0 +1,16 @@
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+
+// ---- Change the theme of the bootstrap here!
+
+$custom-primary: #13aff0; // #eb0000;
+$custom-secondary: #ffdd00;
+
+$theme-colors: (
+    primary:    $custom-primary,
+    secondary: $custom-secondary,
+    dark: $custom-secondary
+);
+
+@import "bootstrap";
