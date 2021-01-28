@@ -116,6 +116,10 @@ const config = {
   entry: {
     portfolio: './src/portfolio/portfolio.js'
   },
+  devServer: {
+    compress: true,
+    port: 80
+  } ,
   output: {
     path: path.resolve(__dirname, '/dist'),
     filename: '[name].[contenthash].bundle.js',
@@ -125,7 +129,8 @@ const config = {
   module: {
     rules: [woff, eot, jpeg, pug, scss, styl]
   },
-  plugins: part
+  plugins: part,
+ 
 };
 
 module.exports = config;
