@@ -6,7 +6,7 @@ Portfolio template
 
 ## Preview
 
-![Image of Portfolio Template](http://utopiafx.se/uA84oq09463812742cru73/b1.png)
+![Image of Portfolio Template](http://utopiafx.se/uA84oq09463812742cru73/bd2.png)
 
 ## Requirements
 
