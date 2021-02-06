@@ -74,7 +74,7 @@ change for your project. This makes it more easier maintainable site
 
 portfolio/
 
-Here is the main folder for your project, where you will spend mostly of the time of your project.
+Here is the main folder for your project, where you will spend mostly of the time in your project.
 There is a javascriptfile here for where you put all your javascript code, 
 portfolio.pug for creating the design of the page and stylus file .styl where you 
 code all your stylesheet, but doing that with help of coding stylus and not css directly.
